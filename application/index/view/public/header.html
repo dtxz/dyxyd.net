@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- bootstarp-css -->
+    <link href="__INDEX__/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <!--// bootstarp-css -->
+    <!-- css -->
+    <link rel="stylesheet" href="__INDEX__/css/style.css" type="text/css" media="all" />
+    <!--// css -->
+    <script src="__INDEX__/js/jquery-1.11.1.min.js"></script>
+    <!--fonts-->
+    <link href='http://fonts.useso.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,800,700,600' rel='stylesheet' type='text/css'>
+    <!--/fonts-->
+    <link href="__INDEX__/css/animate.css" rel="stylesheet" type="text/css" media="all">
+    <script src="__INDEX__/js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+    <!--start-smoth-scrolling-->
+    <script type="text/javascript" src="__INDEX__/js/move-top.js"></script>
+    <script type="text/javascript" src="__INDEX__/js/easing.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
+            $(".scroll").click(function(event){
+                event.preventDefault();
+                $('html,body').animate({scrollTop:$(this.hash).offset().top},900);
+            });
+        });
+    </script>
+    <!--start-smoth-scrolling-->
+
+</head>
+<body>
+<!-- banner -->
+<div id="home" class="banner a-banner">
+    <!-- container -->
+    <div class="container">
+        <div class="header">
+            <div class="head-logo">
+                <a href="index.html"><img src="__INDEX__/images/logo.png" alt="" /></a>
+            </div>
+            <div class="top-nav">
+                <span class="menu"><img src="__INDEX__/images/menu.png" alt=""></span>
+                <ul class="nav1">
+                    <li class="hvr-sweep-to-bottom"><a href="index.html">首页<i><img src="__INDEX__/images/nav-but1.png" alt=""/></i></a></li>
+                    <li class="hvr-sweep-to-bottom"><a href="__INDEX__/about.html">关于我们<i><img src="__INDEX__/images/nav-but2.png" alt=""/></i></a></li>
+                    <li class="hvr-sweep-to-bottom"><a href="__INDEX__/services.html">专属服务<i><img src="__INDEX__/images/nav-but3.png" alt=""/></i></a></li>
+                    <li class="hvr-sweep-to-bottom"><a href="__INDEX__/blog.html">新闻动态<i><img src="__INDEX__/images/nav-but4.png" alt=""/></i></a></li>
+                    <li class="hvr-sweep-to-bottom"><a href="__INDEX__/mail.html">联系我们<i><img src="__INDEX__/images/nav-but5.png" alt=""/></i></a></li>
+                    <div class="clearfix"> </div>
+                </ul>
+                <!-- script-for-menu -->
+                <script>
+                    $( "span.menu" ).click(function() {
+                        $( "ul.nav1" ).slideToggle( 300, function() {
+                            // Animation complete.
+                        });
+                    });
+                </script>
+                <!-- /script-for-menu -->
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+    <!-- //container -->
+    <div class="container">
+        <script src="__INDEX__/js/responsiveslides.min.js"></script>
+        <script>
+            // You can also use "$(window).load(function() {"
+            $(function () {
+                // Slideshow 4
+                $("#slider3").responsiveSlides({
+                    auto: true,
+                    pager: true,
+                    nav: false,
+                    speed: 500,
+                    namespace: "callbacks",
+                    before: function () {
+                        $('.events').append("<li>before event fired.</li>");
+                    },
+                    after: function () {
+                        $('.events').append("<li>after event fired.</li>");
+                    }
+                });
+
+            });
+        </script>
+        <div  id="top" class="callbacks_container">
+            <ul class="rslides" id="slider3">
+                <li>
+                    <div class="banner-info">
+                        <h2> <span> 德&nbsp;阳&nbsp;新&nbsp;一&nbsp;代&nbsp;重&nbsp;运&nbsp;有&nbsp;限&nbsp;责&nbsp;任&nbsp;公&nbsp;司</span></h2>
+                        <div class="line"> </div>
+                        <p></p>
+                    </div>
+                </li>
+                <li>
+                    <div class="banner-info">
+                        <h2><span> 四&nbsp;川&nbsp;合&nbsp;众&nbsp;铁&nbsp;路&nbsp;运&nbsp;输&nbsp;服&nbsp;务&nbsp;有&nbsp;限&nbsp;责&nbsp;任&nbsp;公&nbsp;司</span> </h2>
+                        <div class="line"> </div>
+                        <p> </p>
+                    </div>
+                </li>
+                <li>
+                    <div class="banner-info">
+                        <h2><span> 德&nbsp;阳&nbsp;新&nbsp;一&nbsp;代&nbsp;包&nbsp;装&nbsp;有&nbsp;限&nbsp;公&nbsp;司 </span> </h2>
+                        <div class="line"> </div>
+                        <p></p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

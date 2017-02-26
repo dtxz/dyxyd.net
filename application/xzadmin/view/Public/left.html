@@ -1,0 +1,92 @@
+<div class="page-sidebar" id="sidebar">
+    <!-- Page Sidebar Header-->
+    <div class="sidebar-header-wrapper">
+        <input class="searchinput" type="text">
+        <i class="searchicon fa fa-search"></i>
+        <div class="searchhelper">输入需要搜索的关键词</div>
+    </div>
+    <!-- /Page Sidebar Header -->
+    <!-- Sidebar Menu -->
+    <ul class="nav sidebar-menu">
+        <!--Dashboard-->
+        <li>
+            <a href="#" class="menu-dropdown">
+                <i class="menu-icon fa fa-user"></i>
+                <span class="menu-text">管理员</span>
+                <i class="menu-expand"></i>
+            </a>
+            <ul class="submenu">
+                <li>
+                    <a href="{:url('admin/showlist')}">
+                            <span class="menu-text">
+                                管理列表
+                            </span>
+                        <i class="menu-expand"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="{:url('admin/add')}">
+                                <span class="menu-text">
+                                    新增管理员
+                                </span>
+                        <i class="menu-expand"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="{:url('AuthGroup/groupList')}">
+                                <span class="menu-text">
+                                    管理员权限组
+                                </span>
+                        <i class="menu-expand"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="{:url('auth_rule/ruleList')}">
+                            <span class="menu-text">
+                                权限列表
+                            </span>
+                        <i class="menu-expand"></i>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="#" class="menu-dropdown">
+                <i class="menu-icon fa fa-file-text"></i>
+                <span class="menu-text">文档</span>
+                <i class="menu-expand"></i>
+            </a>
+            <ul class="submenu">
+                <li>
+                    <a href="/admin/document/index.html">
+                        <span class="menu-text">
+                            文章列表
+                        </span>
+                        <i class="menu-expand"></i>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="#" class="menu-dropdown">
+                <i class="menu-icon fa fa-gear"></i>
+                <span class="menu-text">系统</span>
+                <i class="menu-expand"></i>
+            </a>
+            <ul class="submenu">
+                <li>
+                    <a href="/admin/document/index.html">
+                        <span class="menu-text">
+                            配置
+                        </span>
+                        <i class="menu-expand"></i>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+    </ul>
+    <!-- /Sidebar Menu -->
+</div>
