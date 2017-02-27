@@ -8,7 +8,5 @@ namespace app\xzadmin\model;
 use think\Model;
 class AuthGroup extends Model
 {
-    public function addGroups(){
 
-    }
 }

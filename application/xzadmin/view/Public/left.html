@@ -8,7 +8,7 @@
     <!-- /Page Sidebar Header -->
     <!-- Sidebar Menu -->
     <ul class="nav sidebar-menu">
-        <!--Dashboard-->
+        <!--管理员栏目列表-->
         <li>
             <a href="#" class="menu-dropdown">
                 <i class="menu-icon fa fa-user"></i>
@@ -21,14 +21,6 @@
                             <span class="menu-text">
                                 管理列表
                             </span>
-                        <i class="menu-expand"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="{:url('admin/add')}">
-                                <span class="menu-text">
-                                    新增管理员
-                                </span>
                         <i class="menu-expand"></i>
                     </a>
                 </li>
@@ -50,16 +42,34 @@
                 </li>
             </ul>
         </li>
-
+        <!--栏目分类管理列表-->
         <li>
             <a href="#" class="menu-dropdown">
-                <i class="menu-icon fa fa-file-text"></i>
-                <span class="menu-text">文档</span>
+                <i class="menu-icon fa fa-folder"></i>
+                <span class="menu-text">栏目分类管理</span>
                 <i class="menu-expand"></i>
             </a>
             <ul class="submenu">
                 <li>
-                    <a href="/admin/document/index.html">
+                    <a href="{:url('cate/cateList')}">
+                        <span class="menu-text">
+                            栏目分类列表
+                        </span>
+                        <i class="menu-expand"></i>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <!--文章管理列表-->
+        <li>
+            <a href="#" class="menu-dropdown">
+                <i class="menu-icon fa fa-file-text"></i>
+                <span class="menu-text">文章管理</span>
+                <i class="menu-expand"></i>
+            </a>
+            <ul class="submenu">
+                <li>
+                    <a href="{:url('article/articleList')}">
                         <span class="menu-text">
                             文章列表
                         </span>

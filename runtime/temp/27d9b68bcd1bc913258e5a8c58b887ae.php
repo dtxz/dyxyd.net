@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:64:"D:\dyxyd.net\public/../application/xzadmin\view\login\login.html";i:1488119293;}*/ ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><!--Head--><head>
     <meta charset="utf-8">
@@ -31,7 +32,7 @@
                 <div class="loginbox-textbox">
                     <input class="form-control" placeholder="请输入下方验证码" name="captcha" type="text">
                     <div class="text-center" style="margin-top: 5px">
-                        <img src="{:captcha_src()}"  onclick="this.src='{:captcha_src()}?'+Math.random();"  alter="captcha"  style="cursor:pointer;">
+                        <img src="<?php echo captcha_src(); ?>"  onclick="this.src='<?php echo captcha_src(); ?>?'+Math.random();"  alter="captcha"  style="cursor:pointer;">
                     </div>
                 </div>
                 <div class="loginbox-submit">

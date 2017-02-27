@@ -1,0 +1,137 @@
+{include file="Public/head"}
+	<!-- /头部 -->
+	
+	<div class="main-container container-fluid">
+		<div class="page-container">
+            <!-- Page Sidebar -->
+            {include file="Public/left"}
+            <!-- /Page Sidebar -->
+            <!-- Page Content -->
+            <div class="page-content">
+                <!-- Page Breadcrumb -->
+                <div class="page-breadcrumbs">
+                    <ul class="breadcrumb">
+                        <li>
+                            <a href="#">系统</a>
+                        </li>
+                        <li>
+                            <a href="{:url('cateList')}">栏目管理</a>
+                        </li>
+                    <li class="active">添加栏目</li>
+                    </ul>
+                </div>
+                <!-- /Page Breadcrumb -->
+
+                <!-- Page Body -->
+                <div class="page-body">
+                    
+<div class="row">
+    <div class="col-lg-12 col-sm-12 col-xs-12">
+        <div class="widget">
+            <div class="widget-header bordered-bottom bordered-blue">
+                <span class="widget-caption">新增栏目</span>
+            </div>
+            <div class="widget-body">
+                <div id="horizontal-form">
+                    <form class="form-horizontal" role="form" action="" method="post">
+                        <div class="form-group">
+                            <label  class="col-sm-2 control-label no-padding-right"> 栏目级别</label>
+                            <div class="col-sm-6">
+                                <select name="pid">
+                                    <option value="0">顶级栏目</option>
+                                    {volist name='cateres' id='cate'}
+                                    <option value="{$cate.id}">
+                                        {if condition="$cate['level'] neq 0"}
+                                        |
+                                        {/if}
+                                        <?php echo str_repeat('----',$cate['level'])?>
+                                        {$cate.catename}
+                                    </option>
+                                    {/volist}
+                                </select>
+                            </div>
+                            <p class="help-block col-sm-4 red">* 必选</p>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label no-padding-right">栏目名称</label>
+                            <div class="col-sm-6">
+                                <input class="form-control" id="catename" placeholder="" name="catename" required="" type="text">
+                            </div>
+                            <p class="help-block col-sm-4 red">* 必填</p>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label no-padding-right">栏目关键词</label>
+                            <div class="col-sm-6">
+                                <input class="form-control" id="keywords"  name="keywords"  type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label no-padding-right">栏目概要</label>
+                            <div class="col-sm-6">
+                                <textarea class="form-control" id="desc"  name="desc"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label no-padding-right">栏目类型</label>
+                            <div class="col-sm-6">
+                                <div class="radio">
+                                    <label>
+                                        <input checked="checked" name="type" value="1" class="incerted" type="radio">
+                                        <span class="text">文章列表</span>
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input name="type" value="2" class="incerted" type="radio">
+                                        <span class="text">单页</span>
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input name="type" value="3" class="incerted" type="radio">
+                                        <span class="text">图片列表</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label no-padding-right">单页栏目内容</label>
+                            <div class="col-sm-6">
+                                <textarea id="content"  name="content"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-default">保存信息</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+                </div>
+                <!-- /Page Body -->
+            </div>
+            <!-- /Page Content -->
+		</div>	
+	</div>
+
+	    <!--Basic Scripts-->
+    <script src="__ADMIN__/style/jquery_002.js"></script>
+    <script src="__ADMIN__/style/bootstrap.js"></script>
+    <script src="__ADMIN__/style/jquery.js"></script>
+    <!--Beyond Scripts-->
+    <script src="__ADMIN__/style/beyond.js"></script>
+    <script type="text/javascript">
+        //实例化编辑器
+        //建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
+        UE.getEditor('content',{initialFrameWidth:650,initialFrameHeight:300,});
+    </script>
+    
+
+
+</body></html>
