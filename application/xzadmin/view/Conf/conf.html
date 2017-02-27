@@ -1,0 +1,110 @@
+{include file="Public/head"}
+
+	<!-- /头部 -->
+	
+	<div class="main-container container-fluid">
+		<div class="page-container">
+            <!-- Page Sidebar -->
+            {include file="Public/left"}
+            <!-- /Page Sidebar -->
+            <!-- Page Content -->
+            <div class="page-content">
+                <!-- Page Breadcrumb -->
+                <div class="page-breadcrumbs">
+                    <ul class="breadcrumb">
+                    <li>
+                        <a href="{:url('index/index')}">系统</a>
+                    </li>
+                        <li class="active">配置清单</li>
+                        </ul>
+                </div>
+                <!-- /Page Breadcrumb -->
+                <!-- Page Body -->
+                <div class="page-body">
+
+    <button type="button" tooltip="新增配置" class="btn btn-sm btn-azure btn-addon"  >
+        网站配置
+    </button>
+    <div class="row">
+        <div class="col-lg-12 col-sm-12 col-xs-12">
+            <div class="widget">
+                <div class="widget-body">
+                    <div class="flip-scroll">
+                        <form action="" method="post">
+                        <table class="table table-bordered table-hover">
+                            <thead class="">
+                            <tr>
+                                <th class="text-center" width="30%">配置名称</th>
+                                <th class="text-center">配置值</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php foreach ($confres as $k => $v):?>
+                                <tr>
+                                    <td align="center"><?php echo $v['cnname']; ?></td>
+                                    <td align="center">
+                                        <?php if($v['type']==1): ?>
+                                            <input name="<?php echo $v['enname']?>" type="text" value="<?php echo $v['value']?>" style="width:70%;text-align: center"/>
+                                        <?php elseif($v['type']==2): ?>
+                                              <textarea name="<?php echo $v['enname']?>" style="width:70%;text-align: center"><?php echo $v['value']?></textarea>
+                                        <?php elseif($v['type']==3):
+                                            if($v['values']){
+                                                $arr = explode(',',$v['values']);
+                                            }
+                                            foreach($arr as $key_conf => $value_conf):
+                                        ?>
+                                            <label style="margin-right: 30px;">
+                                            <input <?php if($v['value']==$value_conf){echo 'checked="checked"';} ?> type="radio" name="<?php echo $v['enname']?>" value="<?php echo $value_conf ; ?>" />
+                                              <span class="text"><?php echo $value_conf ; ?></span>
+                                            </label>
+                                        <?php endforeach ; ?>
+                                        <?php elseif($v['type']==4): ?>
+                                            <label>
+                                            <input <?php if($v['value']==$v['values']){echo 'checked="checked"';} ?> name="<?php echo $v['enname']?>" value="<?php echo $v['values']; ?>" type="checkbox" class="colored-error" />
+                                            <span class="text"> <?php echo $v['values']; ?> </span>
+                                            </label>
+                                        <?php elseif($v['type']==5):
+                                        if($v['values']){
+                                                $arrselect = explode(',',$v['values']);
+                                            }
+                                    ?>
+                                        <select name="<?php echo $v['enname']?>">
+                                            <?php foreach($arrselect as $key_page => $values_page): ?>
+                                            <option <?php if($v['value']==$values_page){echo 'selected="selected"';} ?>><?php echo $values_page; ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                    <?php endif; ?>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                            </tbody>
+                        </table>
+                            <div align="center" style="padding-top: 10px;">
+                                <button type="submit" class="btn btn-default">提交修改</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+
+</div>
+        <!-- /Page Body -->
+</div>
+    <!-- /Page Content -->
+    </div>
+</div>
+
+	    <!--Basic Scripts-->
+    <script src="__ADMIN__/style/jquery_002.js"></script>
+    <script src="__ADMIN__/style/bootstrap.js"></script>
+    <script src="__ADMIN__/style/jquery.js"></script>
+    <!--Beyond Scripts-->
+    <script src="__ADMIN__/style/beyond.js"></script>
+    
+
+
+</body></html>
